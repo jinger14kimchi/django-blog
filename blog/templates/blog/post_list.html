@@ -4,7 +4,15 @@
 	<title>Hello</title>
 </head>
 <body>
-	Annyeong
-
+	<h1>Welcome to blog!</h1>
+	<div>
+		{% for post in posts %}
+			<div>
+					<h1><a href=''>{{ post.title }}</a></h1>
+					{{ post.published_date }}
+					<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+	</div>
 </body>
 </html>
