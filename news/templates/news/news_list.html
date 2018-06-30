@@ -1,8 +1,14 @@
-<html>
-    <head>
-        <title>News</title>
-    </head>
-    <body>
-        <h1>Welcome to news!!</h1>
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content%}
+    {% for news in news %}
+        <div class="news">
+            <div class="date">
+                {{ news.published_date }}
+            </div>
+			<h1><a href="{% url 'news_detail' pk=news.pk %}">{{ news.title }}</a></h1>
+            <p>{{ news.text|linebreaksbr }}</p>
+            <a href="{% url 'news_detail' pk=news.pk %}">read more..</a>
+        </div>
+    {% endfor %}
+{% endblock %}

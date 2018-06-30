@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Django Girls</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <header class="page-header"> 
+        <h1><a class="" href="/blog"> Django Girls Blog</a> </h1>
+        <div class="main-nav">
+            <ul>
+               <li> <a href="{% url 'post_list' %}">Blog</a></li>
+               <li> <a href="{% url 'news_list' %}">News</a></li>
+            </ul>
+        </div>
+    </header>
+    
+

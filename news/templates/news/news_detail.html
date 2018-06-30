@@ -1,0 +1,22 @@
+
+{% block content %}
+    <div class="post">
+        {% if news.published_date %}
+            <div class="date">
+                {{ news.published_date }}
+            </div>
+        {% endif %}
+
+        {% comment %}
+        
+        {% if user.is_authenticated %}        
+            <a class="btn btn-default" href="{% url 'news_edit' pk=news.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %} 
+        
+        {% endcomment %}
+
+        <h1>{{ news.title }}</h1>
+        <h5>{{ news.author }}</h5>
+        <p>{{ news.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
